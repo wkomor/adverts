@@ -5,6 +5,7 @@
         <h3>{{ ad.title }}</h3>
             <p>{{ ad.text }}</p>
         <br>
+        <a class="btn btn-primary" href="{% url 'ad_update' ad.id %}">Редактировать</a>
         <hr>
 
     </div>

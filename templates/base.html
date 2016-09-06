@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <title>My amazing ad board</title>
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <a class="btn btn-primary pull-left" href="/">Главная</a>
+            <a class="btn btn-primary pull-right" href="{% url 'login' %}">Логин</a>
+            <a class="btn btn-primary pull-right" href="{% url 'register' %}">Регистрация</a>
+        </div>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

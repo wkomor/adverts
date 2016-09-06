@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 CUSTOM_APPS = [
     'ad',
+    'users'
 ]
 INSTALLED_APPS += CUSTOM_APPS
 
@@ -125,3 +126,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'users.AppUser'

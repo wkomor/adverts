@@ -2,7 +2,8 @@
 # 06.09.2016
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
-from hitcount.models import HitCountMixin
+from django.contrib.contenttypes.fields import GenericRelation
+from hitcount.models import HitCountMixin, HitCount
 from users.models import AppUser
 
 
@@ -34,6 +35,9 @@ class Ad(TimeStampedModel, HitCountMixin):
     owner = models.ForeignKey(AppUser, verbose_name='Владелец',
                               related_name='users', blank=True, null=True)
 
+    hit_count_generic = GenericRelation(
+        HitCount, object_id_field='object_pk',
+        related_query_name='hit_count_generic_relation')
 
     def __str__(self):
         return self.title

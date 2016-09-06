@@ -5,6 +5,9 @@ from .forms import AuthForm, CreationForm
 
 
 class RegisterFormView(FormView):
+    """
+    Registartation view
+    """
     form_class = CreationForm
     success_url = "/user/login"
     template_name = "users/register.html"
@@ -15,6 +18,9 @@ class RegisterFormView(FormView):
 
 
 class LoginFormView(FormView):
+    """
+    Login view
+    """
     form_class = AuthForm
     template_name = "users/login.html"
     success_url = "/"
@@ -26,6 +32,9 @@ class LoginFormView(FormView):
 
 
 class LogoutView(View):
+    """
+    Logout view
+    """
     def get(self, request):
         logout(request)
         return HttpResponseRedirect("/")
